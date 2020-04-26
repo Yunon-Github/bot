@@ -241,7 +241,6 @@ def receive_trades():
                         # 成行注文を出してポジションを持つまでにかかった時間
                         nariyuki_tyumon_end = time.perf_counter() - nariyuki_tyumon_sta
                         res = insert_influxdb('positon_confirm_time', nariyuki_tyumon_end)
-                        print('res = ', res)
 
                         print('ポジションは', len(position), '個あります')
                         position_price_result = 0
@@ -590,7 +589,7 @@ def receive_trades():
         while True:
             # print('----------')
             # print('api_count = ', sum(api_count))
-            if sum(api_count) > 450:
+            if sum(api_count) > 400:
                 print('api制限回避のため1分')
                 time.sleep(60)
 

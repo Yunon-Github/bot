@@ -1,4 +1,4 @@
-#import pybitflyer
+# import pybitflyer
 from bffx_client import BFFXClient, OrderState
 import time
 from threading import Thread
@@ -12,11 +12,12 @@ client = BFFXClient(
     api_secret="jxQ09ydZWxfAe6CB3U3fvVMJSNjPaEaSJiinLn5Qu9k="  # bitFlyerのAPI Secret
 )
 
-#bitFlyerAPIキーの設定
+# bitFlyerAPIキーの設定
 api = pybitflyer.API(
 api_key="XwtMm31szNgQPAfgTH1ZjY",
 api_secret = "jxQ09ydZWxfAe6CB3U3fvVMJSNjPaEaSJiinLn5Qu9k="
 )
+
 
 def error_checker(r):
     if 'child_order_acceptance_id' in r:
@@ -28,15 +29,16 @@ def error_checker(r):
 
 
 def error_test():
-    #成行買注文
-    #btc_Long_taker = {'child_order_acceptance_id': 'JRF20200425-134056-381546'}
+    # 成行買注文
+    # btc_Long_taker = {'child_order_acceptance_id': 'JRF20200425-134056-381546'}
     btc_Long_taker = {'status': -200, 'error_message': 'This is the error', 'data': None}
 
     result = error_checker(btc_Long_taker)
     print(result[0])
 
+
 def bffxclient_test():
-    x =  client.has_positions()
+    x = client.has_positions()
     print(x)
 
 yakujou_data = pd.read_csv('test.csv', sep=',')
