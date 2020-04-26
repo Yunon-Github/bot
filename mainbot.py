@@ -12,9 +12,7 @@ from bffx_client import BFFXClient, OrderState
 
 from ws import (
     ExchangeType,
-
     BinanceWS,
-
     WebSocketProcessor,
 )
 
