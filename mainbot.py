@@ -1,7 +1,6 @@
 import time
 import decimal
 import pybitflyer
-import sys
 from multiprocessing import Process, Manager
 from sty import fg
 import configparser
